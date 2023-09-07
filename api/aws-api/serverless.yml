@@ -1,0 +1,16 @@
+org: dpsingh77
+app: aws-api-http
+service: aws-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: hello.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: get
